@@ -6,17 +6,83 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXFileReference section */
-		8682F1D52E27F48E0014B5B2 /* Vulcan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vulcan.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		861AA0D22E2F90E6004EA1A8 /* AchievementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0AB2E2F90E6004EA1A8 /* AchievementsModel.swift */; };
+		861AA0D32E2F90E6004EA1A8 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0AC2E2F90E6004EA1A8 /* AchievementsView.swift */; };
+		861AA0D42E2F90E6004EA1A8 /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0AD2E2F90E6004EA1A8 /* AchievementsViewModel.swift */; };
+		861AA0D52E2F90E6004EA1A8 /* VulcanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0B12E2F90E6004EA1A8 /* VulcanApp.swift */; };
+		861AA0D62E2F90E6004EA1A8 /* TextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0B32E2F90E6004EA1A8 /* TextExtension.swift */; };
+		861AA0D72E2F90E6004EA1A8 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0BB2E2F90E6004EA1A8 /* MainModel.swift */; };
+		861AA0D82E2F90E6004EA1A8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0BC2E2F90E6004EA1A8 /* MainView.swift */; };
+		861AA0D92E2F90E6004EA1A8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0BD2E2F90E6004EA1A8 /* MainViewModel.swift */; };
+		861AA0DA2E2F90E6004EA1A8 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0BF2E2F90E6004EA1A8 /* MapModel.swift */; };
+		861AA0DB2E2F90E6004EA1A8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0C02E2F90E6004EA1A8 /* MapView.swift */; };
+		861AA0DC2E2F90E6004EA1A8 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0C12E2F90E6004EA1A8 /* MapViewModel.swift */; };
+		861AA0DD2E2F90E6004EA1A8 /* RegistationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0C52E2F90E6004EA1A8 /* RegistationModel.swift */; };
+		861AA0DE2E2F90E6004EA1A8 /* RegistationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0C62E2F90E6004EA1A8 /* RegistationView.swift */; };
+		861AA0DF2E2F90E6004EA1A8 /* RegistationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0C72E2F90E6004EA1A8 /* RegistationViewModel.swift */; };
+		861AA0E02E2F90E6004EA1A8 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0C92E2F90E6004EA1A8 /* SignUpModel.swift */; };
+		861AA0E12E2F90E6004EA1A8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0CA2E2F90E6004EA1A8 /* SignUpView.swift */; };
+		861AA0E22E2F90E6004EA1A8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0CB2E2F90E6004EA1A8 /* SignUpViewModel.swift */; };
+		861AA0E32E2F90E6004EA1A8 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0CD2E2F90E6004EA1A8 /* StatisticModel.swift */; };
+		861AA0E42E2F90E6004EA1A8 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0CE2E2F90E6004EA1A8 /* StatisticView.swift */; };
+		861AA0E52E2F90E6004EA1A8 /* StatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0CF2E2F90E6004EA1A8 /* StatisticViewModel.swift */; };
+		861AA0E62E2F90E6004EA1A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 861AA0AF2E2F90E6004EA1A8 /* Assets.xcassets */; };
+		861AA0E82E2F90E6004EA1A8 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 861AA0B72E2F90E6004EA1A8 /* SF-Pro-Display-Bold.otf */; };
+		861AA0E92E2F90E6004EA1A8 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 861AA0B82E2F90E6004EA1A8 /* SF-Pro-Display-Regular.otf */; };
+		861AA0EA2E2F90E6004EA1A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 861AA0C32E2F90E6004EA1A8 /* Preview Assets.xcassets */; };
+		861AA0F02E2FBA48004EA1A8 /* VolcanoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0EF2E2FBA48004EA1A8 /* VolcanoesViewModel.swift */; };
+		861AA0F12E2FBA48004EA1A8 /* VolcanoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0EE2E2FBA48004EA1A8 /* VolcanoesView.swift */; };
+		861AA0F22E2FBA48004EA1A8 /* VolcanoesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0ED2E2FBA48004EA1A8 /* VolcanoesModel.swift */; };
+		868E65102E311F36002F0CCC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E650E2E311F36002F0CCC /* NetworkManager.swift */; };
+		86EB70FF2E2FE0BE006574D8 /* DetailVolcanoesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB70FB2E2FE0BE006574D8 /* DetailVolcanoesModel.swift */; };
+		86EB71002E2FE0BE006574D8 /* DetailVolcanoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB70FC2E2FE0BE006574D8 /* DetailVolcanoesView.swift */; };
+		86EB71012E2FE0BE006574D8 /* DetailVolcanoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB70FD2E2FE0BE006574D8 /* DetailVolcanoesViewModel.swift */; };
+		86EB710E2E2FE546006574D8 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB710A2E2FE546006574D8 /* GameModel.swift */; };
+		86EB710F2E2FE546006574D8 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB710B2E2FE546006574D8 /* GameView.swift */; };
+		86EB71102E2FE546006574D8 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB710C2E2FE546006574D8 /* GameViewModel.swift */; };
+		86EB71182E2FFCDF006574D8 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB71152E2FFCDF006574D8 /* UserDefaultsManager.swift */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		8682F1D72E27F48E0014B5B2 /* Vulcan */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Vulcan;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		861AA0AB2E2F90E6004EA1A8 /* AchievementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsModel.swift; sourceTree = "<group>"; };
+		861AA0AC2E2F90E6004EA1A8 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		861AA0AD2E2F90E6004EA1A8 /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
+		861AA0AF2E2F90E6004EA1A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		861AA0B02E2F90E6004EA1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		861AA0B12E2F90E6004EA1A8 /* VulcanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VulcanApp.swift; sourceTree = "<group>"; };
+		861AA0B32E2F90E6004EA1A8 /* TextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtension.swift; sourceTree = "<group>"; };
+		861AA0B72E2F90E6004EA1A8 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		861AA0B82E2F90E6004EA1A8 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		861AA0BB2E2F90E6004EA1A8 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		861AA0BC2E2F90E6004EA1A8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		861AA0BD2E2F90E6004EA1A8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		861AA0BF2E2F90E6004EA1A8 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		861AA0C02E2F90E6004EA1A8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		861AA0C12E2F90E6004EA1A8 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		861AA0C32E2F90E6004EA1A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		861AA0C52E2F90E6004EA1A8 /* RegistationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationModel.swift; sourceTree = "<group>"; };
+		861AA0C62E2F90E6004EA1A8 /* RegistationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationView.swift; sourceTree = "<group>"; };
+		861AA0C72E2F90E6004EA1A8 /* RegistationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationViewModel.swift; sourceTree = "<group>"; };
+		861AA0C92E2F90E6004EA1A8 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		861AA0CA2E2F90E6004EA1A8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		861AA0CB2E2F90E6004EA1A8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		861AA0CD2E2F90E6004EA1A8 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		861AA0CE2E2F90E6004EA1A8 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		861AA0CF2E2F90E6004EA1A8 /* StatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewModel.swift; sourceTree = "<group>"; };
+		861AA0ED2E2FBA48004EA1A8 /* VolcanoesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolcanoesModel.swift; sourceTree = "<group>"; };
+		861AA0EE2E2FBA48004EA1A8 /* VolcanoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolcanoesView.swift; sourceTree = "<group>"; };
+		861AA0EF2E2FBA48004EA1A8 /* VolcanoesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolcanoesViewModel.swift; sourceTree = "<group>"; };
+		8682F1D52E27F48E0014B5B2 /* Vulcan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vulcan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		868E650E2E311F36002F0CCC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		86EB70FB2E2FE0BE006574D8 /* DetailVolcanoesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVolcanoesModel.swift; sourceTree = "<group>"; };
+		86EB70FC2E2FE0BE006574D8 /* DetailVolcanoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVolcanoesView.swift; sourceTree = "<group>"; };
+		86EB70FD2E2FE0BE006574D8 /* DetailVolcanoesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVolcanoesViewModel.swift; sourceTree = "<group>"; };
+		86EB710A2E2FE546006574D8 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		86EB710B2E2FE546006574D8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		86EB710C2E2FE546006574D8 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		86EB71152E2FFCDF006574D8 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8682F1D22E27F48E0014B5B2 /* Frameworks */ = {
@@ -29,10 +95,160 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		861AA0AE2E2F90E6004EA1A8 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0AB2E2F90E6004EA1A8 /* AchievementsModel.swift */,
+				861AA0AC2E2F90E6004EA1A8 /* AchievementsView.swift */,
+				861AA0AD2E2F90E6004EA1A8 /* AchievementsViewModel.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		861AA0B22E2F90E6004EA1A8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0AF2E2F90E6004EA1A8 /* Assets.xcassets */,
+				861AA0B02E2F90E6004EA1A8 /* Info.plist */,
+				861AA0B12E2F90E6004EA1A8 /* VulcanApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		861AA0B42E2F90E6004EA1A8 /* TextExtension */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0B32E2F90E6004EA1A8 /* TextExtension.swift */,
+			);
+			path = TextExtension;
+			sourceTree = "<group>";
+		};
+		861AA0B52E2F90E6004EA1A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0B42E2F90E6004EA1A8 /* TextExtension */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		861AA0B62E2F90E6004EA1A8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		861AA0B92E2F90E6004EA1A8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0B72E2F90E6004EA1A8 /* SF-Pro-Display-Bold.otf */,
+				861AA0B82E2F90E6004EA1A8 /* SF-Pro-Display-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		861AA0BA2E2F90E6004EA1A8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0B62E2F90E6004EA1A8 /* CustomViews */,
+				861AA0B92E2F90E6004EA1A8 /* Fonts */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		861AA0BE2E2F90E6004EA1A8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0BB2E2F90E6004EA1A8 /* MainModel.swift */,
+				861AA0BC2E2F90E6004EA1A8 /* MainView.swift */,
+				861AA0BD2E2F90E6004EA1A8 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		861AA0C22E2F90E6004EA1A8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0BF2E2F90E6004EA1A8 /* MapModel.swift */,
+				861AA0C02E2F90E6004EA1A8 /* MapView.swift */,
+				861AA0C12E2F90E6004EA1A8 /* MapViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		861AA0C42E2F90E6004EA1A8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0C32E2F90E6004EA1A8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		861AA0C82E2F90E6004EA1A8 /* Registation */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0C52E2F90E6004EA1A8 /* RegistationModel.swift */,
+				861AA0C62E2F90E6004EA1A8 /* RegistationView.swift */,
+				861AA0C72E2F90E6004EA1A8 /* RegistationViewModel.swift */,
+			);
+			path = Registation;
+			sourceTree = "<group>";
+		};
+		861AA0CC2E2F90E6004EA1A8 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0C92E2F90E6004EA1A8 /* SignUpModel.swift */,
+				861AA0CA2E2F90E6004EA1A8 /* SignUpView.swift */,
+				861AA0CB2E2F90E6004EA1A8 /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		861AA0D02E2F90E6004EA1A8 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0CD2E2F90E6004EA1A8 /* StatisticModel.swift */,
+				861AA0CE2E2F90E6004EA1A8 /* StatisticView.swift */,
+				861AA0CF2E2F90E6004EA1A8 /* StatisticViewModel.swift */,
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		861AA0D12E2F90E6004EA1A8 /* Vulcan */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0B22E2F90E6004EA1A8 /* App */,
+				86EB71172E2FFCDF006574D8 /* Managers */,
+				86EB710D2E2FE546006574D8 /* Game */,
+				86EB70FE2E2FE0BE006574D8 /* DetailVolcanoes */,
+				861AA0EC2E2FBA29004EA1A8 /* Volcanoes */,
+				861AA0AE2E2F90E6004EA1A8 /* Achievements */,
+				861AA0B52E2F90E6004EA1A8 /* Extensions */,
+				861AA0BA2E2F90E6004EA1A8 /* Helpers */,
+				861AA0BE2E2F90E6004EA1A8 /* Main */,
+				861AA0C22E2F90E6004EA1A8 /* Map */,
+				861AA0C42E2F90E6004EA1A8 /* Preview Content */,
+				861AA0C82E2F90E6004EA1A8 /* Registation */,
+				861AA0CC2E2F90E6004EA1A8 /* SignUp */,
+				861AA0D02E2F90E6004EA1A8 /* Statistic */,
+			);
+			path = Vulcan;
+			sourceTree = "<group>";
+		};
+		861AA0EC2E2FBA29004EA1A8 /* Volcanoes */ = {
+			isa = PBXGroup;
+			children = (
+				861AA0ED2E2FBA48004EA1A8 /* VolcanoesModel.swift */,
+				861AA0EE2E2FBA48004EA1A8 /* VolcanoesView.swift */,
+				861AA0EF2E2FBA48004EA1A8 /* VolcanoesViewModel.swift */,
+			);
+			path = Volcanoes;
+			sourceTree = "<group>";
+		};
 		8682F1CC2E27F48E0014B5B2 = {
 			isa = PBXGroup;
 			children = (
-				8682F1D72E27F48E0014B5B2 /* Vulcan */,
+				861AA0D12E2F90E6004EA1A8 /* Vulcan */,
 				8682F1D62E27F48E0014B5B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +259,51 @@
 				8682F1D52E27F48E0014B5B2 /* Vulcan.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		868E650F2E311F36002F0CCC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				868E650E2E311F36002F0CCC /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		86EB70FE2E2FE0BE006574D8 /* DetailVolcanoes */ = {
+			isa = PBXGroup;
+			children = (
+				86EB70FB2E2FE0BE006574D8 /* DetailVolcanoesModel.swift */,
+				86EB70FC2E2FE0BE006574D8 /* DetailVolcanoesView.swift */,
+				86EB70FD2E2FE0BE006574D8 /* DetailVolcanoesViewModel.swift */,
+			);
+			path = DetailVolcanoes;
+			sourceTree = "<group>";
+		};
+		86EB710D2E2FE546006574D8 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				86EB710A2E2FE546006574D8 /* GameModel.swift */,
+				86EB710B2E2FE546006574D8 /* GameView.swift */,
+				86EB710C2E2FE546006574D8 /* GameViewModel.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		86EB71162E2FFCDF006574D8 /* UserDefaultsManager */ = {
+			isa = PBXGroup;
+			children = (
+				86EB71152E2FFCDF006574D8 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaultsManager;
+			sourceTree = "<group>";
+		};
+		86EB71172E2FFCDF006574D8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				868E650F2E311F36002F0CCC /* Network */,
+				86EB71162E2FFCDF006574D8 /* UserDefaultsManager */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +320,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				8682F1D72E27F48E0014B5B2 /* Vulcan */,
 			);
 			name = Vulcan;
 			packageProductDependencies = (
@@ -109,6 +367,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				861AA0E62E2F90E6004EA1A8 /* Assets.xcassets in Resources */,
+				861AA0E82E2F90E6004EA1A8 /* SF-Pro-Display-Bold.otf in Resources */,
+				861AA0E92E2F90E6004EA1A8 /* SF-Pro-Display-Regular.otf in Resources */,
+				861AA0EA2E2F90E6004EA1A8 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +381,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				861AA0D22E2F90E6004EA1A8 /* AchievementsModel.swift in Sources */,
+				861AA0D32E2F90E6004EA1A8 /* AchievementsView.swift in Sources */,
+				861AA0D42E2F90E6004EA1A8 /* AchievementsViewModel.swift in Sources */,
+				861AA0F02E2FBA48004EA1A8 /* VolcanoesViewModel.swift in Sources */,
+				861AA0F12E2FBA48004EA1A8 /* VolcanoesView.swift in Sources */,
+				861AA0F22E2FBA48004EA1A8 /* VolcanoesModel.swift in Sources */,
+				861AA0D52E2F90E6004EA1A8 /* VulcanApp.swift in Sources */,
+				861AA0D62E2F90E6004EA1A8 /* TextExtension.swift in Sources */,
+				861AA0D72E2F90E6004EA1A8 /* MainModel.swift in Sources */,
+				86EB710E2E2FE546006574D8 /* GameModel.swift in Sources */,
+				86EB710F2E2FE546006574D8 /* GameView.swift in Sources */,
+				86EB71102E2FE546006574D8 /* GameViewModel.swift in Sources */,
+				861AA0D82E2F90E6004EA1A8 /* MainView.swift in Sources */,
+				861AA0D92E2F90E6004EA1A8 /* MainViewModel.swift in Sources */,
+				861AA0DA2E2F90E6004EA1A8 /* MapModel.swift in Sources */,
+				861AA0DB2E2F90E6004EA1A8 /* MapView.swift in Sources */,
+				861AA0DC2E2F90E6004EA1A8 /* MapViewModel.swift in Sources */,
+				861AA0DD2E2F90E6004EA1A8 /* RegistationModel.swift in Sources */,
+				868E65102E311F36002F0CCC /* NetworkManager.swift in Sources */,
+				861AA0DE2E2F90E6004EA1A8 /* RegistationView.swift in Sources */,
+				861AA0DF2E2F90E6004EA1A8 /* RegistationViewModel.swift in Sources */,
+				86EB70FF2E2FE0BE006574D8 /* DetailVolcanoesModel.swift in Sources */,
+				86EB71002E2FE0BE006574D8 /* DetailVolcanoesView.swift in Sources */,
+				86EB71012E2FE0BE006574D8 /* DetailVolcanoesViewModel.swift in Sources */,
+				861AA0E02E2F90E6004EA1A8 /* SignUpModel.swift in Sources */,
+				861AA0E12E2F90E6004EA1A8 /* SignUpView.swift in Sources */,
+				861AA0E22E2F90E6004EA1A8 /* SignUpViewModel.swift in Sources */,
+				86EB71182E2FFCDF006574D8 /* UserDefaultsManager.swift in Sources */,
+				861AA0E32E2F90E6004EA1A8 /* StatisticModel.swift in Sources */,
+				861AA0E42E2F90E6004EA1A8 /* StatisticView.swift in Sources */,
+				861AA0E52E2F90E6004EA1A8 /* StatisticViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,21 +548,27 @@
 				DEVELOPMENT_TEAM = 59WWFG63NN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Vulcan/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.keshevv.Vulcan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.volcanmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -284,21 +583,27 @@
 				DEVELOPMENT_TEAM = 59WWFG63NN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Vulcan/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.keshevv.Vulcan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.volcanmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
