@@ -4,7 +4,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
 
-
+    let baseURL = "https://volcanoreacher.site/app.php"
 
     struct APIResponse<T: Decodable>: Decodable {
         let success: String?
