@@ -9,6 +9,7 @@ struct StatisticView: View {
     @State private var isDeleting = false
     let userId = UserDefaultsManager().getName()
     @State var isSign = false
+    @State private var showDeleteConfirmation = false
     
     var body: some View {
         ZStack {
@@ -92,21 +93,7 @@ struct StatisticView: View {
                 if !UserDefaultsManager().isGuest() {
                 HStack {
                     Button(action: {
-                        guard !isDeleting else { return }
-                        isDeleting = true
-                        
-                        NetworkManager.shared.deleteAccount(userId: userId ?? "") { result in
-                            isDeleting = false
-                            switch result {
-                            case .success(_):
-                                isSign = true
-                                UserDefaultsManager().saveLoginStatus(false)
-                                UserDefaultsManager().resetAllData()
-                            case .failure(let error):
-                                alertMessage = error.localizedDescription
-                                showAlert = true
-                            }
-                        }
+                        showDeleteConfirmation = true
                     }) {
                         Rectangle()
                             .fill(Color(red: 255/255, green: 63/255, blue: 58/255))
@@ -118,6 +105,21 @@ struct StatisticView: View {
                             .cornerRadius(20)
                     }
                     .padding(.trailing)
+                    .confirmationDialog(
+                        "Are you sure you want to delete your account?",
+                        isPresented: $showDeleteConfirmation,
+                        titleVisibility: .visible
+                    ) {
+                        Button("OK", role: .destructive) {
+                            deleteAccount()
+                        }
+                        Button("Cancel", role: .cancel) {
+
+                        }
+                    } message: {
+                        Text("This action cannot be undone.")
+                    }
+
                     
                     Button(action: {
                         isSign = true
@@ -207,6 +209,24 @@ struct StatisticView: View {
             SignUpView()
         }
     }
+    
+    private func deleteAccount() {
+         guard !isDeleting else { return }
+         isDeleting = true
+         
+         NetworkManager.shared.deleteAccount(userId: userId ?? "") { result in
+             isDeleting = false
+             switch result {
+             case .success(_):
+                 isSign = true
+                 UserDefaultsManager().saveLoginStatus(false)
+                 UserDefaultsManager().resetAllData()
+             case .failure(let error):
+                 alertMessage = error.localizedDescription
+                 showAlert = true
+             }
+         }
+     }
 }
 
 #Preview {

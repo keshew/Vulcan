@@ -394,6 +394,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 platform.position.x = size.width + platform.size.width / 2
             }
         }
+        
+        if player.position.x < 0 || player.position.x > size.width {
+            gameOver()
+        }
     }
     
     private var lastUpdateTime: TimeInterval = 0
