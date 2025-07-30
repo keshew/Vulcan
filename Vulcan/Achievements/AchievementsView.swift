@@ -72,6 +72,13 @@ struct AchievementsView: View {
         ]
     }
     
+    @AppStorage("isFirstTime4") var isFirstTime4: Bool = true
+    @State var currentIndexTutorial = 0
+    var arrayOfMessage = ["Here you will find different\nachievements group:",
+                          "Volcano collections,\nTypes of volcanoes,\nActive volcanoes",
+                          "Each of them is divided into subgroups",
+                          "Clicking on this group will\ngive you a list of volcanoes that\ncan be explored again."]
+    
     var body: some View {
         ZStack {
             Color(red: 1/255, green: 90/255, blue: 174/255).ignoresSafeArea()
@@ -185,6 +192,147 @@ struct AchievementsView: View {
                 Spacer()
             }
             .padding(.vertical)
+            
+            if isFirstTime4 {
+                Color.black.opacity(0.5).ignoresSafeArea()
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "chevron.left")
+                                .foregroundStyle(.white)
+                                .font(.system(size: 24, weight: .semibold))
+                        }
+                        
+                        Spacer()
+                        
+                        Text("Achievements")
+                            .ProBold(size: 34)
+                            .padding(.trailing, 20)
+                        
+                        Spacer()
+                    }
+                    .padding(.top)
+                    .padding(.horizontal)
+                    .hidden()
+                    
+                    Spacer()
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: cardSpacing) {
+                            ForEach(cards) { card in
+                                Rectangle()
+                                    .fill(Color(red: 1/255, green: 90/255, blue: 174/255))
+                                    .frame(width: cardWidth, height: 200)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 46)
+                                            .stroke(Color(red: 18/255, green: 154/255, blue: 247/255), lineWidth: 3)
+                                            .overlay {
+                                                VStack(alignment: .leading, spacing: 10) {
+                                                    Text(card.title)
+                                                        .ProBold(size: 22)
+                                                        .padding(.leading, 30)
+                                                    
+                                                    LazyVGrid(columns: grid) {
+                                                        ForEach(card.items) { item in
+                                                            Rectangle()
+                                                                .fill(Color(red: 1/255, green: 78/255, blue: 151/255))
+                                                                .overlay {
+                                                                    HStack {
+                                                                        Text(item.title)
+                                                                            .Pro(size: 13)
+                                                                        Spacer()
+                                                                        Rectangle()
+                                                                            .foregroundStyle(.clear)
+                                                                            .overlay {
+                                                                                RoundedRectangle(cornerRadius: 16)
+                                                                                    .stroke(.white)
+                                                                                    .overlay {
+                                                                                        Text(item.progress)
+                                                                                            .Pro(size: 12)
+                                                                                    }
+                                                                            }
+                                                                            .frame(width: 45, height: 23)
+                                                                            .cornerRadius(16)
+                                                                    }
+                                                                    .padding(.horizontal)
+                                                                }
+                                                                .frame(height: 50)
+                                                                .cornerRadius(36)
+                                                                .onTapGesture {
+                                                                    if !UserDefaultsManager().isGuest() {
+                                                                        let filtered = achievementsModel.volcanoes.filter { volcan in
+                                                                            filterVolcano(volcan, cardTitle: card.title, itemTitle: item.title)
+                                                                        }
+                                                                        selectedVolcanoes = VolcanoCollection(volcanoes: filtered)
+                                                                    }
+                                                                }
+                                                        }
+                                                    }
+                                                    .padding(.horizontal, 30)
+                                                    
+                                                    Spacer()
+                                                }
+                                                .padding(.vertical, 20)
+                                            }
+                                    }
+                                    .cornerRadius(46)
+                                    .background(GeometryReader { geo -> Color in
+                                        let frame = geo.frame(in: .global)
+                                        let screenCenter = UIScreen.main.bounds.width / 2
+                                        
+                                        let cardCenter = frame.midX
+                                        DispatchQueue.main.async {
+                                            let newIndex = Int(round((cardCenter - screenCenter) / (cardWidth + cardSpacing)))
+                                            let clampedIndex = min(max(-newIndex, 0), 2)
+                                            if clampedIndex != currentIndex {
+                                                currentIndex = clampedIndex
+                                            }
+                                        }
+                                        return Color.clear
+                                    })
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .disabled(true)
+                    
+                    Spacer()
+                }
+                .padding(.vertical)
+                .overlay {
+                    VStack(spacing: 20) {
+                        Text(arrayOfMessage[currentIndexTutorial])
+                            .ProOutline(size: 25, width: 1)
+                            .padding()
+                            .padding(.horizontal)
+                            .multilineTextAlignment(.center)
+                        
+                        Button(action: {
+                            if currentIndexTutorial <= 2 {
+                                currentIndexTutorial += 1
+                            } else {
+                                isFirstTime4 = false
+                            }
+                            
+                        }) {
+                            Rectangle()
+                                .fill(Color(red: 1/255, green: 45/255, blue: 160/255))
+                                .frame(height: 60)
+                                .overlay {
+                                    Text("I get it")
+                                        .ProBold(size: 21)
+                                }
+                                .cornerRadius(16)
+                        }
+                        .padding(.horizontal, 300)
+                    }
+                    .padding(.top, 50)
+                    .offset(x: 90)
+                }
+            }
         }
         .fullScreenCover(item: $selectedVolcanoes) { collection in
             VolcanoesView(volcanoes: collection.volcanoes)
@@ -195,7 +343,7 @@ struct AchievementsView: View {
         let volcanCountry = volcan.contry.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         let volcanType = volcan.type.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         let itemTitleLower = itemTitle.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-
+        
         switch cardTitle {
         case "Volcano collections":
             return volcanCountry.contains(itemTitleLower) || itemTitleLower.contains(volcanCountry)
