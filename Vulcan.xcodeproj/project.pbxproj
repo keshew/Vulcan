@@ -34,6 +34,9 @@
 		861AA0F02E2FBA48004EA1A8 /* VolcanoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0EF2E2FBA48004EA1A8 /* VolcanoesViewModel.swift */; };
 		861AA0F12E2FBA48004EA1A8 /* VolcanoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0EE2E2FBA48004EA1A8 /* VolcanoesView.swift */; };
 		861AA0F22E2FBA48004EA1A8 /* VolcanoesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861AA0ED2E2FBA48004EA1A8 /* VolcanoesModel.swift */; };
+		862F82512E3B6DD700A863EB /* LevelGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F824D2E3B6DD700A863EB /* LevelGameModel.swift */; };
+		862F82522E3B6DD700A863EB /* LevelGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F824E2E3B6DD700A863EB /* LevelGameView.swift */; };
+		862F82532E3B6DD700A863EB /* LevelGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862F824F2E3B6DD700A863EB /* LevelGameViewModel.swift */; };
 		868E65102E311F36002F0CCC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E650E2E311F36002F0CCC /* NetworkManager.swift */; };
 		86EB70FF2E2FE0BE006574D8 /* DetailVolcanoesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB70FB2E2FE0BE006574D8 /* DetailVolcanoesModel.swift */; };
 		86EB71002E2FE0BE006574D8 /* DetailVolcanoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EB70FC2E2FE0BE006574D8 /* DetailVolcanoesView.swift */; };
@@ -73,6 +76,9 @@
 		861AA0ED2E2FBA48004EA1A8 /* VolcanoesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolcanoesModel.swift; sourceTree = "<group>"; };
 		861AA0EE2E2FBA48004EA1A8 /* VolcanoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolcanoesView.swift; sourceTree = "<group>"; };
 		861AA0EF2E2FBA48004EA1A8 /* VolcanoesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolcanoesViewModel.swift; sourceTree = "<group>"; };
+		862F824D2E3B6DD700A863EB /* LevelGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGameModel.swift; sourceTree = "<group>"; };
+		862F824E2E3B6DD700A863EB /* LevelGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGameView.swift; sourceTree = "<group>"; };
+		862F824F2E3B6DD700A863EB /* LevelGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGameViewModel.swift; sourceTree = "<group>"; };
 		8682F1D52E27F48E0014B5B2 /* Vulcan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vulcan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868E650E2E311F36002F0CCC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		86EB70FB2E2FE0BE006574D8 /* DetailVolcanoesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVolcanoesModel.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 		861AA0D12E2F90E6004EA1A8 /* Vulcan */ = {
 			isa = PBXGroup;
 			children = (
+				862F82502E3B6DD700A863EB /* LevelGame */,
 				861AA0B22E2F90E6004EA1A8 /* App */,
 				86EB71172E2FFCDF006574D8 /* Managers */,
 				86EB710D2E2FE546006574D8 /* Game */,
@@ -243,6 +250,16 @@
 				861AA0EF2E2FBA48004EA1A8 /* VolcanoesViewModel.swift */,
 			);
 			path = Volcanoes;
+			sourceTree = "<group>";
+		};
+		862F82502E3B6DD700A863EB /* LevelGame */ = {
+			isa = PBXGroup;
+			children = (
+				862F824D2E3B6DD700A863EB /* LevelGameModel.swift */,
+				862F824E2E3B6DD700A863EB /* LevelGameView.swift */,
+				862F824F2E3B6DD700A863EB /* LevelGameViewModel.swift */,
+			);
+			path = LevelGame;
 			sourceTree = "<group>";
 		};
 		8682F1CC2E27F48E0014B5B2 = {
@@ -411,6 +428,9 @@
 				86EB71182E2FFCDF006574D8 /* UserDefaultsManager.swift in Sources */,
 				861AA0E32E2F90E6004EA1A8 /* StatisticModel.swift in Sources */,
 				861AA0E42E2F90E6004EA1A8 /* StatisticView.swift in Sources */,
+				862F82512E3B6DD700A863EB /* LevelGameModel.swift in Sources */,
+				862F82522E3B6DD700A863EB /* LevelGameView.swift in Sources */,
+				862F82532E3B6DD700A863EB /* LevelGameViewModel.swift in Sources */,
 				861AA0E52E2F90E6004EA1A8 /* StatisticViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

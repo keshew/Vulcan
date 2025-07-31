@@ -5,11 +5,14 @@ struct GameView: View {
     @State private var gameSceneID = UUID()
     @State private var isMenu = false
     @Environment(\.presentationMode) var presentationMode
+    let isTime: Bool
+    
     var scene: SKScene {
         let scene = GameScene()
         scene.size = UIScreen.main.bounds.size
         scene.scaleMode = .resizeFill
         scene.gameViewModel = gameModel
+        scene.isTimeGame = isTime
         return scene
     }
     
@@ -164,14 +167,14 @@ struct GameView: View {
     }
 }
 #Preview {
-    GameView()
+    GameView(isTime: true)
 }
 
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     weak var gameViewModel: GameViewModel?
-    
+    var isTimeGame: Bool = false
     private var background1: SKSpriteNode!
     private var background2: SKSpriteNode!
     private var player: SKSpriteNode!
@@ -182,6 +185,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var bg: SKSpriteNode!
     private var topBg: SKSpriteNode!
     private var bottomBg: SKSpriteNode!
+    private var timerLabel: SKLabelNode!
     
     private var moveSpeed: CGFloat = 200
     private var lastSpeedIncreaseTime: TimeInterval = 0
@@ -192,6 +196,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var scoreLabel: SKLabelNode!
     private var timeSinceLastPoint: TimeInterval = 0
     
+    private var timer: Timer?
+    private var elapsedTime: Int = 0
     
     struct PhysicsCategory {
         static let none: UInt32 = 0
@@ -206,12 +212,49 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         backgroundColor = .clear
         
         setupScoreLabel()
+        if isTimeGame {
+            setupTimerLabel()
+        }
         setupBackground()
         setupPlayer()
         setupPlatforms()
         setupLava()
         
         lastSpeedIncreaseTime = 0
+        
+        if isTimeGame {
+            startTimer()
+        }
+    }
+    
+    private func setupTimerLabel() {
+        timerLabel = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
+        timerLabel.fontSize = 24
+        timerLabel.fontColor = .white
+        
+        timerLabel.position = CGPoint(x: size.width / 2, y: size.height * 0.55)
+        timerLabel.zPosition = 100
+        
+        timerLabel.text = "Time: \(elapsedTime)s"
+        addChild(timerLabel)
+    }
+
+    func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            self.elapsedTime += 1
+            timerLabel.text = "Time: \(elapsedTime)s"
+        }
+    }
+
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+
+    override func willMove(from view: SKView) {
+        stopTimer()
     }
     
     func resetScene() {
