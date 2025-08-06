@@ -34,7 +34,6 @@ struct SignUpView: View {
     private func backImageView() -> some View {
         Image(.back)
             .resizable()
-            .aspectRatio(contentMode: .fit)
             .ignoresSafeArea()
     }
     

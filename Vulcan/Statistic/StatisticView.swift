@@ -32,7 +32,6 @@ struct StatisticView: View {
     private func backImage() -> some View {
         Image(.back)
             .resizable()
-            .aspectRatio(contentMode: .fit)
             .ignoresSafeArea()
     }
     
@@ -127,6 +126,7 @@ struct StatisticView: View {
             backButton()
                 .padding(.trailing)
         }
+        .padding(.leading)
     }
     
     @ViewBuilder

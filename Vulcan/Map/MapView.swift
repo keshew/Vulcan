@@ -34,6 +34,9 @@ struct MapView: View {
     @State private var showAchievementBanner = false
     @State private var activeAchievementIndex: Int? = nil
     
+    let scaleX = 1024 / 440
+    let scaleY = 1366 / 956
+    
     private let volcanoPositions: [CGPoint] = [
         CGPoint(x: 100, y: 200),
         CGPoint(x: 150, y: 100),
@@ -51,7 +54,43 @@ struct MapView: View {
         CGPoint(x: 590, y: 330),
         CGPoint(x: 50, y: 200)
     ]
+    private let volcanoPositions2: [CGPoint] = [
+        CGPoint(x: 700, y: 400),
+        CGPoint(x: 850, y: 200),
+        CGPoint(x: 200, y: 400),
+        CGPoint(x: 750, y: 450),
+        CGPoint(x: 800, y: 350),
+        CGPoint(x: 900, y: 280),
+        CGPoint(x: 650, y: 310),
+        
+        CGPoint(x: 150, y: 320),
+        CGPoint(x: 100, y: 300),
+        CGPoint(x: 250, y: 250),
+        CGPoint(x: 450, y: 190),
+        CGPoint(x: 630, y: 80),
+        CGPoint(x: 300, y: 100),
+        CGPoint(x: 410, y: 370),
+        CGPoint(x: 250, y: 200)
+    ]
+    
+    private let volcanoPositions3: [CGPoint] = [
+        CGPoint(x: 750, y: 400),
+        CGPoint(x: 850, y: 600),
+        CGPoint(x: 200, y: 400),
+        CGPoint(x: 750, y: 450),
+        CGPoint(x: 900, y: 750),
+        CGPoint(x: 900, y: 380),
+        CGPoint(x: 530, y: 310),
 
+        CGPoint(x: 190, y: 320),
+        CGPoint(x: 100, y: 470),
+        CGPoint(x: 250, y: 250),
+        CGPoint(x: 450, y: 190),
+        CGPoint(x: 530, y: 100),
+        CGPoint(x: 300, y: 100),
+        CGPoint(x: 460, y: 370),
+        CGPoint(x: 250, y: 600)
+    ]
     @AppStorage("isFirstTime2") private var isFirstTime2: Bool = true
     @State private var currentIndex = 0
     
@@ -92,7 +131,6 @@ private extension MapView {
         ZStack {
             Image(.back)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
                 .ignoresSafeArea()
             
             Image(.map2)
@@ -103,22 +141,26 @@ private extension MapView {
                 .resizable()
                 .frame(height: 160)
                 .ignoresSafeArea()
-                .offset(y: -135)
+                .offset(y: UIScreen.main.bounds.height > 1000 ? -430 : UIScreen.main.bounds.height > 800 ? -340 : -135)
         }
     }
     
     @ViewBuilder
     func volcanoesButtonsLayer() -> some View {
-        ZStack {
-            ForEach(Array(mapModel.volcanoes.enumerated()), id: \.element.id) { index, volcan in
-                volcanoButton(at: index, volcan: volcan)
-            }
-            
-            if isFirstTime2 {
-                Color.black.opacity(0.5).ignoresSafeArea()
-                
-                ForEach(Array(mapModel.volcanoes.enumerated()), id: \.element.id) { index, volcan in
-                    volcanoButton(at: index, volcan: volcan, tutorialMode: true)
+        Group {
+            if !UserDefaultsManager().isGuest() {
+                ZStack {
+                    ForEach(Array(mapModel.volcanoes.enumerated()), id: \.element.id) { index, volcan in
+                        volcanoButton(at: index, volcan: volcan)
+                    }
+                    
+                    if isFirstTime2 {
+                        Color.black.opacity(0.5).ignoresSafeArea()
+                        
+                        ForEach(Array(mapModel.volcanoes.enumerated()), id: \.element.id) { index, volcan in
+                            volcanoButton(at: index, volcan: volcan, tutorialMode: true)
+                        }
+                    }
                 }
             }
         }
@@ -135,7 +177,7 @@ private extension MapView {
                 volcanoImage(for: volcan)
             }
         }
-        .position(volcanoPositions.indices.contains(index) ? volcanoPositions[index] : .zero)
+        .position(UIScreen.main.bounds.height > 1000  ? (volcanoPositions3.indices.contains(index) ? volcanoPositions3[index] : .zero) : UIScreen.main.bounds.height > 800 ? (volcanoPositions2.indices.contains(index) ? volcanoPositions2[index] : .zero) : (volcanoPositions.indices.contains(index) ? volcanoPositions[index] : .zero))
         .opacity(tutorialMode && currentIndex == 1 && index != 0 ? 0 : 1)
     }
     

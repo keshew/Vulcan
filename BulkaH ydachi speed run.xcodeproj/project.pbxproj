@@ -79,7 +79,7 @@
 		862F824D2E3B6DD700A863EB /* LevelGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGameModel.swift; sourceTree = "<group>"; };
 		862F824E2E3B6DD700A863EB /* LevelGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGameView.swift; sourceTree = "<group>"; };
 		862F824F2E3B6DD700A863EB /* LevelGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGameViewModel.swift; sourceTree = "<group>"; };
-		8682F1D52E27F48E0014B5B2 /* Vulcan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vulcan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8682F1D52E27F48E0014B5B2 /* BulkaH ydachi speed run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BulkaH ydachi speed run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		868E650E2E311F36002F0CCC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		86EB70FB2E2FE0BE006574D8 /* DetailVolcanoesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVolcanoesModel.swift; sourceTree = "<group>"; };
 		86EB70FC2E2FE0BE006574D8 /* DetailVolcanoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVolcanoesView.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 		8682F1D62E27F48E0014B5B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8682F1D52E27F48E0014B5B2 /* Vulcan.app */,
+				8682F1D52E27F48E0014B5B2 /* BulkaH ydachi speed run.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,9 +326,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8682F1D42E27F48E0014B5B2 /* Vulcan */ = {
+		8682F1D42E27F48E0014B5B2 /* BulkaH ydachi speed run */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8682F1E32E27F48F0014B5B2 /* Build configuration list for PBXNativeTarget "Vulcan" */;
+			buildConfigurationList = 8682F1E32E27F48F0014B5B2 /* Build configuration list for PBXNativeTarget "BulkaH ydachi speed run" */;
 			buildPhases = (
 				8682F1D12E27F48E0014B5B2 /* Sources */,
 				8682F1D22E27F48E0014B5B2 /* Frameworks */,
@@ -338,11 +338,11 @@
 			);
 			dependencies = (
 			);
-			name = Vulcan;
+			name = "BulkaH ydachi speed run";
 			packageProductDependencies = (
 			);
 			productName = Vulcan;
-			productReference = 8682F1D52E27F48E0014B5B2 /* Vulcan.app */;
+			productReference = 8682F1D52E27F48E0014B5B2 /* BulkaH ydachi speed run.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -360,7 +360,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8682F1D02E27F48E0014B5B2 /* Build configuration list for PBXProject "Vulcan" */;
+			buildConfigurationList = 8682F1D02E27F48E0014B5B2 /* Build configuration list for PBXProject "BulkaH ydachi speed run" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -374,7 +374,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8682F1D42E27F48E0014B5B2 /* Vulcan */,
+				8682F1D42E27F48E0014B5B2 /* BulkaH ydachi speed run */,
 			);
 		};
 /* End PBXProject section */
@@ -565,7 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Vulcan/Preview Content\"";
-				DEVELOPMENT_TEAM = 59WWFG63NN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vulcan/App/Info.plist;
@@ -581,7 +581,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.volcanmap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.volcanmapproj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -589,7 +589,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -601,7 +601,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Vulcan/Preview Content\"";
-				DEVELOPMENT_TEAM = 59WWFG63NN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vulcan/App/Info.plist;
@@ -617,7 +617,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.volcanmap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.volcanmapproj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -625,14 +625,14 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8682F1D02E27F48E0014B5B2 /* Build configuration list for PBXProject "Vulcan" */ = {
+		8682F1D02E27F48E0014B5B2 /* Build configuration list for PBXProject "BulkaH ydachi speed run" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8682F1E12E27F48F0014B5B2 /* Debug */,
@@ -641,7 +641,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8682F1E32E27F48F0014B5B2 /* Build configuration list for PBXNativeTarget "Vulcan" */ = {
+		8682F1E32E27F48F0014B5B2 /* Build configuration list for PBXNativeTarget "BulkaH ydachi speed run" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8682F1E42E27F48F0014B5B2 /* Debug */,

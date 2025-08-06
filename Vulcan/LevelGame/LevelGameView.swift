@@ -56,7 +56,9 @@ struct LevelGameView: View {
                     
                     Button(action: {
                         isTime = true
-                        isGame = true
+                        print(isTime)
+                            isGame = true
+                     
                     }) {
                         Rectangle()
                             .fill(Color(red: 255/255, green: 64/255, blue: 58/255))
@@ -77,7 +79,7 @@ struct LevelGameView: View {
             .padding(.vertical)
         }
         .fullScreenCover(isPresented: $isGame) {
-                 GameView(isTime: isTime)
+                 GameView(isTime: $isTime)
              }
     }
 }

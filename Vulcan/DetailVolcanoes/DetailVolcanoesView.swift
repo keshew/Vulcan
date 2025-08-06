@@ -16,7 +16,6 @@ struct DetailVolcanoesView: View {
             Color(red: 1/255, green: 90/255, blue: 174/255).ignoresSafeArea()
                 Image(.back)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
                     .ignoresSafeArea()
             
             VStack(alignment: .leading) {

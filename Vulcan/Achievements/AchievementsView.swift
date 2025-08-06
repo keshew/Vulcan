@@ -85,7 +85,6 @@ struct AchievementsView: View {
             
             Image(.back)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
                 .ignoresSafeArea()
             
             VStack(alignment: .leading) {

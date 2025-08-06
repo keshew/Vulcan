@@ -5,7 +5,7 @@ struct GameView: View {
     @State private var gameSceneID = UUID()
     @State private var isMenu = false
     @Environment(\.presentationMode) var presentationMode
-    let isTime: Bool
+    @Binding var isTime: Bool
     
     var scene: SKScene {
         let scene = GameScene()
@@ -39,26 +39,23 @@ struct GameView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        
-                    }) {
-                        Rectangle()
-                            .fill(Color(red: 255/255, green: 64/255, blue: 58/255))
-                            .overlay {
-                                HStack(spacing: 5) {
-                                    Image(.stars)
-                                        .resizable()
-                                        .frame(width: 30, height: 30)
-                                    
-                                    Text("\(UserDefaultsManager().getCoins())")
-                                        .ProBold(size: 20)
-                                }
+                    Rectangle()
+                        .fill(Color(red: 255/255, green: 64/255, blue: 58/255))
+                        .overlay {
+                            HStack(spacing: 5) {
+                                Image(.stars)
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                
+                                Text("\(UserDefaultsManager().getCoins())")
+                                    .ProBold(size: 20)
                             }
-                            .frame(width: 80, height: 40)
-                            .cornerRadius(12)
-                    }
+                        }
+                        .frame(width: 80, height: 40)
+                        .cornerRadius(12)
                 }
                 .padding(.top, 30)
+                .padding(.horizontal)
                 
                 Spacer()
             }
@@ -167,7 +164,7 @@ struct GameView: View {
     }
 }
 #Preview {
-    GameView(isTime: true)
+    GameView(isTime: .constant(true))
 }
 
 import SpriteKit
@@ -212,9 +209,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         backgroundColor = .clear
         
         setupScoreLabel()
-        if isTimeGame {
-            setupTimerLabel()
-        }
+     
         setupBackground()
         setupPlayer()
         setupPlatforms()
@@ -222,7 +217,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         lastSpeedIncreaseTime = 0
         
+        print("IS time? \(isTimeGame)")
         if isTimeGame {
+            setupTimerLabel()
             startTimer()
         }
     }
@@ -295,36 +292,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setupBackground() {
         let bg2Texture = SKTexture(imageNamed: "bgGame")
         bg = SKSpriteNode(texture: bg2Texture)
-        bg.position = CGPoint(x: 0, y: 0)
+        bg.position = CGPoint(x: UIScreen.main.bounds.height > 100 ? 230 : 0, y: UIScreen.main.bounds.height > 1000 ? 510 : UIScreen.main.bounds.height > 800 ? 350 : 0)
         addChild(bg)
         
         let bgTopTexture = SKTexture(imageNamed: "blueBg")
         topBg = SKSpriteNode(texture: bgTopTexture)
-        topBg.size.height = 150
-        topBg.position = CGPoint(x: 0, y: 370)
+        topBg.size.height = UIScreen.main.bounds.height > 810 ? 250 : 150
+        topBg.position = CGPoint(x: UIScreen.main.bounds.height > 100 ? 230 : 0, y: UIScreen.main.bounds.height > 1000 ? 970 : UIScreen.main.bounds.height > 800 ? 750 : 370)
         topBg.zPosition = 5
         addChild(topBg)
         
         let bgBottomTexture = SKTexture(imageNamed: "puprpleBg")
         bottomBg = SKSpriteNode(texture: bgBottomTexture)
         bottomBg.size.height = 150
-        bottomBg.position = CGPoint(x: 0, y: 60)
+        bottomBg.position = CGPoint(x: UIScreen.main.bounds.height > 100 ? 230 : 0, y: 60)
         bottomBg.zPosition = 5
         addChild(bottomBg)
         
         let bgTexture = SKTexture(imageNamed: "field")
         background1 = SKSpriteNode(texture: bgTexture)
         background1.anchorPoint = CGPoint.zero
-        background1.size.height = 350
+        background1.size.height = UIScreen.main.bounds.height > 810 ? 550 : 350
         background1.position = CGPoint(x: 0, y: 0)
         background1.zPosition = 3
         addChild(background1)
         
         background2 = SKSpriteNode(texture: bgTexture)
         background2.anchorPoint = CGPoint.zero
-        background2.size.height = 350
+        background2.size.height = UIScreen.main.bounds.height > 810 ? 450 : 150
         background2.position = CGPoint(x: background1.size.width, y: 0)
-        background2.zPosition = 3
+        background2.zPosition = 4
         addChild(background2)
     }
     
@@ -346,7 +343,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setupPlatforms() {
         for i in 0..<4 {
-            addPlatform(at: CGPoint(x: CGFloat(130 + i * 250), y: size.height * 0.12))
+            addPlatform(at: CGPoint(x: CGFloat(130 + i * (UIScreen.main.bounds.height > 810 ? 350 : 250)), y: UIScreen.main.bounds.height > 810 ? size.height * 0.06 : size.height * 0.12))
         }
     }
     
@@ -359,7 +356,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let platform = SKSpriteNode(texture: texture)
         platform.position = position
         platform.zPosition = 4
-        platform.size = CGSize(width: 230, height: 100)
+        platform.size = CGSize(width: UIScreen.main.bounds.height > 810 ? 330 : 230, height: UIScreen.main.bounds.height > 810 ? 110 : 100)
         
         platform.physicsBody = SKPhysicsBody(texture: texture, size: platform.size)
         platform.physicsBody?.isDynamic = false

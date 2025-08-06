@@ -47,7 +47,6 @@ struct MainView: View {
     private func backgroundImage() -> some View {
         Image(.back)
             .resizable()
-            .aspectRatio(contentMode: .fit)
             .ignoresSafeArea()
     }
     
@@ -57,10 +56,17 @@ struct MainView: View {
     private func mainContent() -> some View {
         VStack(alignment: .leading) {
             headerSection()
-            Spacer()
+            
+                Spacer()
+           
             buttonsRow()
+            
+            if UIScreen.main.bounds.width > 900 {
+                Spacer()
+            }
         }
         .padding(.vertical)
+        
     }
     
     // MARK: - Header Section
@@ -214,6 +220,7 @@ struct MainView: View {
                 .opacity(currentIndex == 3 ? 1 : 0)
         }
         .padding()
+        .padding(.bottom, UIScreen.main.bounds.width > 1300 ? 195 : UIScreen.main.bounds.width > 810 ? 130 : 0)
     }
     
     @ViewBuilder

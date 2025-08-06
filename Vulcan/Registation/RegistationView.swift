@@ -34,7 +34,6 @@ struct RegistationView: View {
     private func backgroundImage() -> some View {
         Image(.back)
             .resizable()
-            .aspectRatio(contentMode: .fit)
             .ignoresSafeArea()
     }
     
